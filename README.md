@@ -126,3 +126,36 @@ IOC, MVC, AOP Spring-Framework-Interview-Question
 
 ### 16. Can you inject null and empty string values in Spring?
     Yes, you can.
+
+### 17. What are the common implementations of the Application Context ?
+ The three commonly used implementation of 'Application Context' are
+-	ClassPathXmlApplicationContext : It Loads context definition from an XML file located in the classpath, treating context definitions as classpath resources. The application context is loaded from the application's classpath by using the code .
+
+      ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+      
+-	FileSystemXmlApplicationContext : It loads context definition from an XML file in the filesystem. The application context is loaded from the file system by using the code .
+
+      ApplicationContext context = new FileSystemXmlApplicationContext("bean.xml");
+      
+-	XmlWebApplicationContext : It loads context definition from an XML file contained within a web application.
+
+### 18. How is a typical spring implementation look like ?
+ For a typical Spring Application we need the following files:
+-	An interface that defines the functions.
+-	An Implementation that contains properties, its setter and getter methods, functions etc.,
+-	Spring AOP (Aspect Oriented Programming)
+-	A XML file called Spring configuration file.
+- Client program that uses the function.
+
+### 20.  What is the typical Bean life cycle in Spring Bean Factory Container ?
+   Bean life cycle in Spring Bean Factory Container is as follows:
+-	The spring container finds the bean’s definition from the XML file and instantiates the bean.
+-	Using the dependency injection, spring populates all of the properties as specified in the bean definition
+-	If the bean implements the BeanNameAware interface, the factory calls setBeanName() passing the bean’s ID.
+- If the bean implements the BeanFactoryAware interface, the factory calls setBeanFactory(), passing an instance of itself.
+-	If there are any BeanPostProcessors associated with the bean, their post- ProcessBeforeInitialization() methods will be called.
+-	If an init-method is specified for the bean, it will be called.
+-	Finally, if there are any BeanPostProcessors associated with the bean, their postProcessAfterInitialization() methods will be called
+
+### 20. What do you mean by Bean wiring ?
+  The act of creating associations between application components (beans) within the Spring container is reffered to as Bean wiring.
